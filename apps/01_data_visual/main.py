@@ -10,15 +10,15 @@ if data_set is not None:
     dataframe = pd.read_csv(data_set)
 
     # Dropear columnas
-    st.write("Solo se mostraran las columnas seleccionadas:")
+    st.write("Seleccione las columnas a eliminar:")
     columns_to_drop = [st.checkbox(column, value=True, key=column) for column in dataframe.columns]
     columns_to_drop = dataframe.columns[columns_to_drop]
-    dataframe.drop(columns=columns_to_drop, inplace=False)
+    dataframe = dataframe.drop(columns=columns_to_drop, inplace=False)
     st.write(dataframe)
  
-    # Filtro a columna "str"
+    # Filtro a columna 
     selected_column = st.selectbox("Columnas", options=dataframe.columns)
     st.write("Filtrar filas por valor en una columna:")
     selected_value = st.text_input("Valor a filtrar en la columna seleccionada")
-    filtered_data = dataframe[dataframe[selected_column] == selected_value]
+    filtered_data = dataframe[dataframe[selected_column].astype(str) == selected_value]
     st.write(filtered_data)
