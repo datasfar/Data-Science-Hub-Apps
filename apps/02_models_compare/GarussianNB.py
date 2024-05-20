@@ -1,6 +1,7 @@
 import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 class GNB_Model():
@@ -20,8 +21,11 @@ class GNB_Model():
         self.prediction_gnb = self.model_gnb.predict(df)
         self.prediction_proba_gnb = self.model_gnb.predict_proba(df)
 
-        st.write(self.prediction_gnb)
-        st.write(self.prediction_proba_gnb)
+        # Metricas adicionales
+        self.accuracy = accuracy_score(self.y_test, self.model_gnb.predict(self.x_test))
+        self.confusion = confusion_matrix(self.y_test, self.model_gnb.predict(self.x_test))
+        self.classification = classification_report(self.y_test, self.model_gnb.predict(self.x_test))
+
     
     def model_information(self):
 
@@ -94,7 +98,41 @@ model_gnb.fit(x_train, y_train)
         """)
         
         st.code("""
+# Generamos los datos a predecir
+df = {
+        'sepal_length': 6.4,
+        'sepal_width': 3.5,
+        'petal_length': 6.4,
+        'petal_width': 3.2
+    }
+                
 # Realiza la predicción con los datos de entrada del usuario
 prediction_gnb = model_gnb.predict(df)
 prediction_proba_gnb = model_gnb.predict_proba(df)
         """)
+        
+        st.subheader('Predicción con GarussianNB')
+
+    def model_graphics(self, lirio):
+
+        # Mostrar la predicción
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Setosa:", f"{round(self.prediction_proba_gnb[0,0], 5)}")
+        with col2:
+            st.metric("Vesicolor:", f"{round(self.prediction_proba_gnb[0,1], 5)}")
+        with col3:
+            st.metric("Virginica:", f"{round(self.prediction_proba_gnb[0,2], 5)}")
+
+
+        # Gráfico de la predicción probabilística
+        fig, ax = plt.subplots()
+        ax.bar(lirio.target_names, self.prediction_proba_gnb[0], color=['blue', 'green', 'red'])
+        ax.set_ylabel('Probabilidad')
+        ax.set_title('Probabilidad de cada tipo de lirio')
+        st.pyplot(fig)
+
+
+
+
+  
