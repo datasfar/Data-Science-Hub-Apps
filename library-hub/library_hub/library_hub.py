@@ -43,8 +43,8 @@ def index() -> rx.Component:
                 background="linear-gradient(to left, #8800FF, #CF00FF)",
                 padding="3px",
                 class_name="animate__animated animate__fadeInLeft",
-                width="40%",
-                height="320px",
+                width="25%",
+                height="300px",
                 border_radius="15px",
                 box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
             ),
@@ -72,9 +72,9 @@ def index() -> rx.Component:
                     ),
                     rx.image(
                         src="/image1.png",
-                        width="50%",
+                        width="40%",
                         position="absolute",
-                        left= "315px",
+                        left= "423px",
                         top= "77px",
                         z_index= "1",
                     ),
@@ -125,15 +125,166 @@ def index() -> rx.Component:
                 background="linear-gradient(to right, #8800FF, #CF00FF)",
                 padding="3px",
                 class_name="animate__animated animate__fadeInRight",
-                width="60%",
-                height="320px",
+                width="75%",
+                height="300px",
                 border_radius="15px",
                 box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
             ),
             margin_top="100px",
+            margin_bottom="24px",
             spacing="5",
             justify="center",
-            min_height="85vh",
+        ),
+
+        rx.hstack( 
+            rx.vstack(
+                rx.vstack(
+                    rx.image(
+                        src="/aaa.png",
+                        width="50%",
+                    ),
+                    rx.heading(
+                        "DS APPS",
+                        font_size="2em",
+                        background = "linear-gradient(#8800FF, #CF00FF)",
+                        background_clip= "text",
+                        text_fill_color= "transparent" 
+                    ),
+                    display="flex",
+                    justify_content="center",
+                    align_items="center",
+                    gap="0",
+                    padding="1em",
+                    width="100%",
+                    height="100%",
+                    background_color="#13111C",
+                    border_radius="12px"
+                ),
+                background="linear-gradient(to left, #8800FF, #CF00FF)",
+                padding="3px",
+                class_name="animate__animated animate__fadeInLeft",
+                width="25%",
+                height="300px",
+                border_radius="15px",
+                box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
+            ),
+            rx.vstack(
+                rx.vstack(
+                    rx.image(
+                        src="/aaa.png",
+                        width="50%",
+                    ),
+                    rx.heading(
+                        "DS APPS",
+                        font_size="2em",
+                        background = "linear-gradient(#8800FF, #CF00FF)",
+                        background_clip= "text",
+                        text_fill_color= "transparent" 
+                    ),
+                    display="flex",
+                    justify_content="center",
+                    align_items="center",
+                    gap="0",
+                    padding="1em",
+                    width="100%",
+                    height="100%",
+                    background_color="#13111C",
+                    border_radius="12px"
+                ),
+                background="linear-gradient(to left, #8800FF, #CF00FF)",
+                padding="3px",
+                class_name="animate__animated animate__fadeInLeft",
+                width="25%",
+                height="300px",
+                border_radius="15px",
+                box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
+            ),
+            rx.box(
+                rx.vstack(                    
+                    position="relative",
+                    top="0",
+                    right="0",
+                    padding="1em",
+                    width="100%",
+                    height="100%",
+                    background_color="#13111C",
+                    border_radius="12px",
+                    overflow="hidden"
+                ),
+                background="linear-gradient(to right, #8800FF, #CF00FF)",
+                padding="3px",
+                class_name="animate__animated animate__fadeInRight",
+                width="25%",
+                height="300px",
+                border_radius="15px",
+                box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
+            ),
+            rx.box(
+                rx.vstack(
+                    rx.box(
+                        rx.heading(
+                            "Scraper", 
+                            font_size="1.6em",
+                            background = "linear-gradient(#8800FF, #CF00FF)",
+                            background_clip= "text",
+                            text_fill_color= "transparent" 
+                        ),
+                        rx.text(
+                        "Obtiene información concreta de una página web. Permite seleccionar los parámetros a scrapear.",
+                        color="#ccccdd",
+                        font_weight="400",
+                        position="relative",
+                        z_index= "2",
+                        ),
+                    ),
+                    rx.image(
+                        src="/image2.png",
+                        width="80%",
+                        position="absolute",
+                        left= "75px",
+                        top= "124px",
+                        rotate="12deg",
+                        z_index= "1",
+                    ),
+                    rx.hstack(
+                        rx.button(
+                            "Live Demo",
+                            rx.icon(
+                                "move-up-right",
+                            ),
+                            font_size="1em",
+                            background_color="rgba(0,0,0,0)",
+                            padding="1.1em",
+                            color="#7709C2",
+                            z_index="2",
+                            box_sizing="border-box",
+                            _hover={
+                                "color":"#CD00FE",
+                            }
+                        ),
+                    ),
+                    display="flex",
+                    justify_content="space-between",
+                    position="relative",
+                    top="0",
+                    right="0",
+                    padding="1em",
+                    width="100%",
+                    height="100%",
+                    background_color="#13111C",
+                    border_radius="12px",
+                    overflow="hidden"
+                ),
+                background="linear-gradient(to right, #8800FF, #CF00FF)",
+                padding="3px",
+                class_name="animate__animated animate__fadeInRight",
+                width="25%",
+                height="300px",
+                border_radius="15px",
+                box_shadow="rgba(132, 59, 206, 0.35) 0px 4px 24px"
+            ),
+            spacing="5",
+            justify="center",
         ),
         background_color="#13111C"
     )
