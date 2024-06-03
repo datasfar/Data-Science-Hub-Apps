@@ -1,13 +1,13 @@
-Data Visualizer Utilities / Generar informes
+## Data Visualizer Utilities / Generar informes
 
-Workflow:
+### Workflow:
     Selecciona y sube un data frame.
     Limpia el data frame. 
     Selecciona los filtros que desees y genera el nuevo data frame.
     Selecciona las opciones que vas a mostrar en el informe.
     Ver o descargar informe en pdf.
 
-Features:
+### Features:
     - Ver resumen del dataframe.
     - Ver header y tail del dataframe.
     - Ver y dropear columnas.
